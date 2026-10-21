@@ -1,0 +1,90 @@
+ui:
+  about: About Me
+  experience: Experience
+  projects: Projects
+  education: Education
+  skills: Technical Skills
+  other_skills: Other Skills
+  responsibilities: Key Responsibilities
+  stack: Stack
+  role: Role
+  download: Download PDF
+  contact: Contact
+  present: Present
+  hello: Hi, I'm
+  contact_me: Contact Me
+  contact_title: Let's work together
+  contact_text: Interested in working together or have a question? Feel free to reach out by phone or email.
+  menu: Menu
+  theme: Toggle theme
+  back_to_top: Back to top
+  built_with: Built with Python & Flask
+  stat_years: Years of experience
+  stat_projects: Key projects
+  stat_tech: Technologies
+
+name: Sitthikan Chaiyamart
+title: Software Developer
+tagline: I design and build end-to-end systems across Web, Mobile, and API — from requirements to production.
+years_experience: 1+
+photo: img/profile.png
+pdf: files/Sitthikan_Resume_EN.pdf
+
+contact:
+  phone: 063-491-0819
+  email: sitthikan.2236@gmail.com
+
+about: >-
+  Software Developer with over 1 year of experience, specializing in designing and
+  developing end-to-end systems across Web, Mobile, and API. Experienced in delivering
+  systems to enterprise clients, working directly with clients, and delivering under
+  high-pressure environments.
+
+experience:
+  - company: Kitsomboon Business and Technology
+    position: Software Developer
+    period: Jul 2025 – Present
+    responsibilities:
+      - title: System Analysis & Design
+        detail: Gather and analyze user requirements to design system architecture that meets business objectives
+      - title: Full-Stack Development
+        detail: Develop full-cycle applications across Web, Mobile, and API, including system testing before delivery
+      - title: Database Architecture
+        detail: Design and structure databases for performance and scalability
+      - title: Client Coordination
+        detail: Coordinate and present work directly to clients, including system delivery in production environments
+      - title: AI-Assisted Development
+        detail: Utilize AI as a supplementary tool for coding, code review, and bug fixing to increase work efficiency while maintaining full ownership of design and technical decisions
+
+projects:
+  - name: Admission Tracking System
+    icon: hospital
+    description: Real-time patient admission tracking system for hospitals, supporting both Web and Mobile Application through a single shared API
+    stack: [Bun, Elysia, Next.js, Flutter, MySQL]
+    role: Designed and developed API, Mobile Application (Flutter), and Web Frontend
+  - name: Air Quality Monitor
+    icon: activity
+    description: Air quality tracking system — analyzed and rebuilt entirely across Web, Mobile, and API with Authentication/SSO and Real-time Dashboard
+    stack: [Bun, Elysia, MySQL, React, Flutter]
+    role: Full-stack Developer — analyzed, designed, and developed the entire system from scratch, including production deployment
+  - name: Internal Deployment Platform (R&D)
+    icon: layers
+    description: Internal Deployment Platform for managing deployment and environment provisioning, supporting multi-role access with Deployment Tracking and Activity Logging
+    stack: [Bun, Elysia, Next.js, PostgreSQL]
+    role: Designed architecture and developed the entire system
+
+education:
+  - degree: Bachelor of Science, Computer Science
+    school: Mahasarakham University, Thailand
+
+skills:
+  Frontend: [HTML, CSS, React (JS/TS), Next.js, Flutter]
+  Backend: [Bun, Elysia, Node.js, Express]
+  Database: [MySQL, Drizzle ORM, PostgreSQL]
+  Tools: [GitHub, VS Code, Postman, Linux, Docker, AWS EC2]
+
+other_skills:
+  - Systematic problem-solving
+  - Teamwork and collaboration
+  - Adaptability and continuous learning
+  - Working under pressure

@@ -1,0 +1,90 @@
+ui:
+  about: เกี่ยวกับฉัน
+  experience: ประสบการณ์ทำงาน
+  projects: ผลงาน
+  education: การศึกษา
+  skills: ทักษะด้านเทคนิค
+  other_skills: ทักษะอื่น ๆ
+  responsibilities: หน้าที่ความรับผิดชอบหลัก
+  stack: เทคโนโลยี
+  role: บทบาท
+  download: ดาวน์โหลด PDF
+  contact: ติดต่อ
+  present: ปัจจุบัน
+  hello: สวัสดี ฉันคือ
+  contact_me: ติดต่อฉัน
+  contact_title: มาร่วมงานกัน
+  contact_text: สนใจร่วมงานหรือมีคำถาม ติดต่อได้ทางโทรศัพท์หรืออีเมล
+  menu: เมนู
+  theme: สลับธีม
+  back_to_top: กลับขึ้นด้านบน
+  built_with: สร้างด้วย Python และ Flask
+  stat_years: ปีประสบการณ์
+  stat_projects: ผลงานหลัก
+  stat_tech: เทคโนโลยีที่ใช้
+
+# TODO: เปลี่ยนเป็นชื่อภาษาไทยที่สะกดถูกต้อง
+name: Sitthikan Chaiyamart
+title: Software Developer
+tagline: ออกแบบและพัฒนาระบบแบบครบวงจรทั้ง Web, Mobile และ API ตั้งแต่เก็บ Requirement จนถึงขึ้น Production
+years_experience: 1+
+photo: img/profile.png
+pdf: files/Sitthikan_Resume_EN.pdf
+
+contact:
+  phone: 063-491-0819
+  email: sitthikan.2236@gmail.com
+
+about: >-
+  Software Developer ที่มีประสบการณ์มากกว่า 1 ปี เชี่ยวชาญการออกแบบและพัฒนาระบบแบบครบวงจร
+  (End-to-End) ทั้ง Web, Mobile และ API มีประสบการณ์ส่งมอบระบบให้ลูกค้าองค์กร
+  ทำงานร่วมกับลูกค้าโดยตรง และส่งมอบงานได้ภายใต้สภาวะกดดัน
+
+experience:
+  - company: Kitsomboon Business and Technology
+    position: Software Developer
+    period: ก.ค. 2025 – ปัจจุบัน
+    responsibilities:
+      - title: วิเคราะห์และออกแบบระบบ
+        detail: รวบรวมและวิเคราะห์ความต้องการของผู้ใช้ เพื่อออกแบบสถาปัตยกรรมระบบให้ตอบโจทย์เป้าหมายทางธุรกิจ
+      - title: พัฒนาระบบแบบ Full-Stack
+        detail: พัฒนาแอปพลิเคชันครบทุกขั้นตอนทั้ง Web, Mobile และ API รวมถึงทดสอบระบบก่อนส่งมอบ
+      - title: ออกแบบฐานข้อมูล
+        detail: ออกแบบและวางโครงสร้างฐานข้อมูลให้มีประสิทธิภาพและรองรับการขยายตัว
+      - title: ประสานงานกับลูกค้า
+        detail: ประสานงานและนำเสนองานกับลูกค้าโดยตรง รวมถึงส่งมอบระบบขึ้นใช้งานจริง (Production)
+      - title: ใช้ AI ช่วยในการพัฒนา
+        detail: ใช้ AI เป็นเครื่องมือเสริมในการเขียนโค้ด รีวิวโค้ด และแก้บั๊ก เพื่อเพิ่มประสิทธิภาพการทำงาน โดยยังคงเป็นผู้ตัดสินใจด้านการออกแบบและเทคนิคทั้งหมดด้วยตนเอง
+
+projects:
+  - name: Admission Tracking System
+    icon: hospital
+    description: ระบบติดตามการรับผู้ป่วยเข้ารักษา (Admission) ของโรงพยาบาลแบบเรียลไทม์ รองรับทั้ง Web และ Mobile Application ผ่าน API ชุดเดียวกัน
+    stack: [Bun, Elysia, Next.js, Flutter, MySQL]
+    role: ออกแบบและพัฒนา API, Mobile Application (Flutter) และ Web Frontend
+  - name: Air Quality Monitor
+    icon: activity
+    description: ระบบติดตามคุณภาพอากาศ — วิเคราะห์และพัฒนาใหม่ทั้งหมดทั้ง Web, Mobile และ API พร้อมระบบ Authentication/SSO และ Dashboard แบบเรียลไทม์
+    stack: [Bun, Elysia, MySQL, React, Flutter]
+    role: Full-stack Developer — วิเคราะห์ ออกแบบ และพัฒนาระบบทั้งหมดตั้งแต่เริ่มต้น จนถึงการ Deploy ขึ้น Production
+  - name: Internal Deployment Platform (R&D)
+    icon: layers
+    description: แพลตฟอร์มภายในสำหรับจัดการการ Deploy และเตรียม Environment รองรับการเข้าใช้งานหลายบทบาท พร้อมระบบติดตามการ Deploy และบันทึกกิจกรรม
+    stack: [Bun, Elysia, Next.js, PostgreSQL]
+    role: ออกแบบสถาปัตยกรรมและพัฒนาระบบทั้งหมด
+
+education:
+  - degree: วิทยาศาสตรบัณฑิต สาขาวิชาวิทยาการคอมพิวเตอร์
+    school: มหาวิทยาลัยมหาสารคาม
+
+skills:
+  Frontend: [HTML, CSS, React (JS/TS), Next.js, Flutter]
+  Backend: [Bun, Elysia, Node.js, Express]
+  Database: [MySQL, Drizzle ORM, PostgreSQL]
+  Tools: [GitHub, VS Code, Postman, Linux, Docker, AWS EC2]
+
+other_skills:
+  - การแก้ปัญหาอย่างเป็นระบบ
+  - การทำงานเป็นทีม
+  - ปรับตัวเก่งและเรียนรู้อยู่เสมอ
+  - ทำงานภายใต้ความกดดันได้ดี

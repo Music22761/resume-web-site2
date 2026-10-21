@@ -1,0 +1,215 @@
+{% extends "base.html" %}
+{% from "_icons.html" import icon %}
+{% set skill_icons = {'Frontend': 'monitor', 'Backend': 'server', 'Database': 'database', 'Tools': 'wrench'} %}
+{% set sections = [
+  ('about', r.ui.about),
+  ('experience', r.ui.experience),
+  ('projects', r.ui.projects),
+  ('skills', r.ui.skills),
+  ('contact', r.ui.contact),
+] %}
+
+{% block content %}
+<header class="nav" data-nav>
+  <div class="container nav-inner">
+    <a href="#top" class="brand">
+      <img src="{{ url_for('static', filename=r.photo) }}" alt="">
+      <span>{{ r.name.split(' ')[0] }}</span>
+    </a>
+
+    <nav class="nav-links" id="nav-links">
+      {% for id, label in sections %}
+        <a href="#{{ id }}" data-link="{{ id }}">{{ label }}</a>
+      {% endfor %}
+    </nav>
+
+    <div class="nav-actions">
+      <div class="lang-switch">
+        {% for code, label in languages.items() %}
+          <a href="{{ url_for('resume', lang=code) }}" class="{{ 'active' if code == lang }}" hreflang="{{ code }}">{{ label }}</a>
+        {% endfor %}
+      </div>
+      <button class="icon-btn" type="button" data-theme-toggle aria-label="{{ r.ui.theme }}" title="{{ r.ui.theme }}">
+        {{ icon('moon', 18, 'only-light') }}{{ icon('sun', 18, 'only-dark') }}
+      </button>
+      <button class="icon-btn menu-btn" type="button" data-menu-toggle aria-controls="nav-links" aria-expanded="false" aria-label="{{ r.ui.menu }}">
+        {{ icon('menu', 20, 'when-closed') }}{{ icon('x', 20, 'when-open') }}
+      </button>
+    </div>
+  </div>
+</header>
+
+<main id="top">
+  {# ---------- Hero ---------- #}
+  <section class="hero">
+    <div class="hero-bg" aria-hidden="true"></div>
+    <div class="container hero-grid">
+      <div class="hero-text reveal">
+        <span class="badge"><span class="pulse"></span>{{ r.title }}</span>
+        <h1>{{ r.ui.hello }}<br><span class="gradient-text">{{ r.name }}</span></h1>
+        <p class="lead">{{ r.tagline }}</p>
+        <div class="hero-actions">
+          <a class="btn btn-primary" href="#contact">{{ icon('mail', 18) }}{{ r.ui.contact_me }}</a>
+          <a class="btn btn-ghost" href="{{ url_for('static', filename=r.pdf) }}" download>{{ icon('download', 18) }}{{ r.ui.download }}</a>
+        </div>
+      </div>
+      <div class="hero-photo reveal">
+        <div class="photo-frame">
+          <img src="{{ url_for('static', filename=r.photo) }}" alt="{{ r.name }}" width="264" height="228">
+        </div>
+        <div class="float-chip chip-a">{{ icon('code', 16) }} Full-Stack</div>
+        <div class="float-chip chip-b">{{ icon('layers', 16) }} Web · Mobile · API</div>
+      </div>
+    </div>
+  </section>
+
+  {# ---------- About ---------- #}
+  <section class="section" id="about">
+    <div class="container">
+      <div class="section-head reveal">
+        <span class="eyebrow">{{ icon('user', 16) }}{{ r.ui.about }}</span>
+      </div>
+      <div class="about-grid">
+        <p class="about-text reveal">{{ r.about }}</p>
+        <div class="stats reveal">
+          <div class="stat"><strong>{{ r.years_experience }}</strong><span>{{ r.ui.stat_years }}</span></div>
+          <div class="stat"><strong>{{ r.projects | length }}</strong><span>{{ r.ui.stat_projects }}</span></div>
+          <div class="stat"><strong>{{ tech_count }}</strong><span>{{ r.ui.stat_tech }}</span></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  {# ---------- Experience ---------- #}
+  <section class="section" id="experience">
+    <div class="container">
+      <div class="section-head reveal">
+        <span class="eyebrow">{{ icon('briefcase', 16) }}{{ r.ui.experience }}</span>
+      </div>
+      <ol class="timeline">
+        {% for job in r.experience %}
+          <li class="timeline-item reveal">
+            <span class="timeline-dot" aria-hidden="true"></span>
+            <article class="card">
+              <header class="job-head">
+                <div>
+                  <h3>{{ job.position }}</h3>
+                  <p class="company">{{ job.company }}</p>
+                </div>
+                <span class="pill">{{ job.period }}</span>
+              </header>
+              <p class="label">{{ r.ui.responsibilities }}</p>
+              <ul class="resp-list">
+                {% for item in job.responsibilities %}
+                  <li>
+                    <span class="check">{{ icon('check', 14) }}</span>
+                    <div><strong>{{ item.title }}</strong><p>{{ item.detail }}</p></div>
+                  </li>
+                {% endfor %}
+              </ul>
+            </article>
+          </li>
+        {% endfor %}
+      </ol>
+    </div>
+  </section>
+
+  {# ---------- Projects ---------- #}
+  <section class="section section-alt" id="projects">
+    <div class="container">
+      <div class="section-head reveal">
+        <span class="eyebrow">{{ icon('layers', 16) }}{{ r.ui.projects }}</span>
+      </div>
+      <div class="project-grid">
+        {% for p in r.projects %}
+          <article class="card project reveal">
+            <div class="project-icon">{{ icon(p.icon, 24) }}</div>
+            <h3>{{ p.name }}</h3>
+            <p class="project-desc">{{ p.description }}</p>
+            <div class="project-role">
+              <span class="label">{{ r.ui.role }}</span>
+              <p>{{ p.role }}</p>
+            </div>
+            <ul class="tags">
+              {% for s in p.stack %}<li>{{ s }}</li>{% endfor %}
+            </ul>
+          </article>
+        {% endfor %}
+      </div>
+    </div>
+  </section>
+
+  {# ---------- Skills & Education ---------- #}
+  <section class="section" id="skills">
+    <div class="container">
+      <div class="section-head reveal">
+        <span class="eyebrow">{{ icon('code', 16) }}{{ r.ui.skills }}</span>
+      </div>
+      <div class="skill-grid">
+        {% for group, items in r.skills.items() %}
+          <div class="card skill-card reveal">
+            <div class="skill-head">
+              <span class="skill-icon">{{ icon(skill_icons.get(group, 'sparkles'), 20) }}</span>
+              <h3>{{ group }}</h3>
+            </div>
+            <ul class="tags">
+              {% for s in items %}<li>{{ s }}</li>{% endfor %}
+            </ul>
+          </div>
+        {% endfor %}
+      </div>
+
+      <div class="duo">
+        <div class="card reveal">
+          <div class="skill-head">
+            <span class="skill-icon">{{ icon('graduation', 20) }}</span>
+            <h3>{{ r.ui.education }}</h3>
+          </div>
+          {% for e in r.education %}
+            <p class="edu-degree">{{ e.degree }}</p>
+            <p class="muted">{{ e.school }}</p>
+          {% endfor %}
+        </div>
+        <div class="card reveal">
+          <div class="skill-head">
+            <span class="skill-icon">{{ icon('sparkles', 20) }}</span>
+            <h3>{{ r.ui.other_skills }}</h3>
+          </div>
+          <ul class="soft-list">
+            {% for s in r.other_skills %}<li>{{ icon('check', 16) }}{{ s }}</li>{% endfor %}
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  {# ---------- Contact ---------- #}
+  <section class="section" id="contact">
+    <div class="container">
+      <div class="contact-card reveal">
+        <h2>{{ r.ui.contact_title }}</h2>
+        <p>{{ r.ui.contact_text }}</p>
+        <div class="contact-actions">
+          <a class="contact-link" href="mailto:{{ r.contact.email }}">
+            <span class="contact-ico">{{ icon('mail', 20) }}</span>
+            <span>{{ r.contact.email }}</span>
+          </a>
+          <a class="contact-link" href="tel:{{ r.contact.phone | replace('-', '') }}">
+            <span class="contact-ico">{{ icon('phone', 20) }}</span>
+            <span>{{ r.contact.phone }}</span>
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer class="footer">
+  <div class="container footer-inner">
+    <span>© {{ year }} {{ r.name }}</span>
+    <span class="muted">{{ r.ui.built_with }}</span>
+  </div>
+</footer>
+
+<a href="#top" class="to-top" data-to-top aria-label="{{ r.ui.back_to_top }}">{{ icon('arrow-up', 20) }}</a>
+{% endblock %}
